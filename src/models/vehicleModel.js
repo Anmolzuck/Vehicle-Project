@@ -12,3 +12,27 @@ export const createVehicleService = async (name, type, wheels, quantity) => {
 
   return result.rows[0];
 };
+
+export const getVehiclesByTypeService = async (type) => {
+  const result = await pool.query(
+    `
+    SELECT * FROM vehicles
+    WHERE type = $1;
+    `,
+    [type]
+  );
+
+  return result.rows;
+};
+
+export const getVehiclesByWheelsService = async (wheels) => {
+  const result = await pool.query(
+    `
+    SELECT * FROM vehicles
+    WHERE wheels = $1;
+    `,
+    [wheels]
+  );
+
+  return result.rows;
+};
