@@ -21,6 +21,7 @@ const createTables = async () => {
       wheels INTEGER NOT NULL CHECK (wheels IN (2, 4)),
       vehicle_type VARCHAR(50) NOT NULL,
       vehicle_id INTEGER REFERENCES vehicles(id) ON DELETE SET NULL,
+      vehicle_name VARCHAR(100) NOT NULL,
       start_date DATE NOT NULL,
       end_date DATE NOT NULL,
       created_at TIMESTAMP DEFAULT NOW()

@@ -6,6 +6,7 @@ export const createBookingService = async (
   wheels,
   vehicleType,
   vehicleId,
+  vehicleName,
   startDate,
   endDate
 ) => {
@@ -33,9 +34,10 @@ export const createBookingService = async (
       wheels,
       vehicle_type,
       vehicle_id,
+      vehicle_name,
       start_date,
       end_date
-    ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+    ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
     RETURNING *;
     `,
     [
@@ -44,6 +46,7 @@ export const createBookingService = async (
       wheels,
       vehicleType,
       vehicleId,
+      vehicleName,
       startDate,
       endDate,
     ]

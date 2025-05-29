@@ -28,7 +28,8 @@ export const getVehiclesByTypeService = async (type) => {
 export const getVehiclesByWheelsService = async (wheels) => {
   const result = await pool.query(
     `
-    SELECT * FROM vehicles
+   SELECT DISTINCT type
+    FROM vehicles
     WHERE wheels = $1;
     `,
     [wheels]

@@ -15,6 +15,7 @@ export const createBooking = async (req, res, next) => {
     wheels,
     vehicleType,
     vehicleId,
+    vehicleName,
     startDate,
     endDate,
   } = req.body;
@@ -26,6 +27,7 @@ export const createBooking = async (req, res, next) => {
       wheels,
       vehicleType,
       vehicleId,
+      vehicleName,
       startDate,
       endDate
     );
